@@ -4,12 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Art Mintable</title>
+    <link rel="stylesheet" href="/assets/plugins/global/plugins.bundle.css" />
     <link rel="stylesheet" href="/assets/css/style.bundle.css" />
   </head>
-  <body>
+  <body class="bg-white">
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
-    <!-- <script src="/assets/js/scripts.bundle.js"></script> -->
+    <script src="/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="/assets/js/scripts.bundle.js"></script>
+    <script>
+      window.$zoho = window.$zoho || {}
+      $zoho.salesiq = $zoho.salesiq || { ready: function () {} }
+    </script>
+    <script
+      id="zsiqscript"
+      src="https://salesiq.zohopublic.com/widget?wc=siqfc6c10b3ca3c0a61b3d650534fe0d7c116cf5922ac5304576fb231a78dd7d20a"
+      defer
+    ></script>
   </body>
 </html>

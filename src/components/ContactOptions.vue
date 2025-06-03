@@ -5,8 +5,13 @@ const email = `support@${appName}.com`
 const mailto = `mailto:${email}`
 
 const startChat = () => {
-  alert('Opening live chat widget...')
-  // integrate Intercom, Tawk.to or others here
+  const salesiq = window.$zoho?.salesiq
+
+  if (salesiq?.chat?.start) {
+    salesiq.chat.start()
+  } else {
+    alert('Live chat not available at the moment.')
+  }
 }
 </script>
 
@@ -17,7 +22,7 @@ const startChat = () => {
         <h2 class="card-title fs-2 fw-bold">Prefer email?</h2>
         <div class="card-toolbar">
           <button type="button" class="btn btn-sm btn-icon btn-color-primary">
-            <i class="ki-outline ki-phone fs-1"></i>
+            <i class="ki-outline ki-sms fs-1"> </i>
           </button>
         </div>
       </div>
@@ -39,7 +44,7 @@ const startChat = () => {
       <div class="card-header">
         <h2 class="card-title fs-2 fw-bold">Need a faster response?</h2>
         <div class="card-toolbar">
-          <i class="ki-outline ki-phone fs-1"></i>
+          <i class="ki-outline ki-message-notif fs-1"></i>
         </div>
       </div>
       <div class="card-body pt-2">
